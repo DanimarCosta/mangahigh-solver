@@ -38,5 +38,22 @@ try:
     navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[3]/div/input').send_keys(id_school)
     time.sleep(1)
 
+    # Confirma
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[4]/div/div/p').click()
+
+# Caso não for possivel fazer o login ignora
 except:
     pass
+
+# Espera entra na atividade
+input('Pressione enter quando estiver dentro da atividade')
+
+# Mostra as respostas
+x = 0
+for x in range(10):
+    input("Pressione enter para ver a resposta")
+    time.sleep(0.5)
+    navegador.find_element_by_id("main-content").click()
+    time.sleep(0.5)
+    navegador.execute_script("alert(document.querySelector('#solutions'))")
+    time.sleep(0.5)
