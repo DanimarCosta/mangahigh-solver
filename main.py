@@ -1,21 +1,42 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import time
 
 # Abre a pagina
 navegador = webdriver.Chrome()
-navegador.get('https://www.mangahigh.com/pt-br/')
+navegador.get('https://platform.mangahigh.com/pt-br/login/student')
 
 # Credenciais de login
+navegador.execute_script("alert('Realize o login e entre na atividade, pressione enter no terminal')")
+time.sleep(5)
+
 user = ''
 password = ''
 id_school = ''
 
-# Faz o login
-navegador.find_element_by_xpath('//*[@id="page-index"]/nav/div[1]/a[1]').click() # login
-navegador.execute_script('alert("Insira seu login e pressione enter no terminal")')
-step = input(':')
+# Tentativa de fazer o login
+try:
+    # Usuario
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[1]/div/input').click()
+    time.sleep(0.5)
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[1]/div/input').send_keys(user)
+    time.sleep(1)
 
-#document.querySelector('#solutions')
-# Faz a atividade
-step = input('Pressione enter: ')
-navegador.find_element_by_xpath('//*[@id="question"]/div').click()
+    # Senha
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[2]/div/input').click()
+    time.sleep(0.5)
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[2]/div/input').send_keys(password)
+    time.sleep(1)
+
+    # Id Escola
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[3]/div/input').click()
+    time.sleep(0.5)
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[3]/div/input').send_keys(Keys.CONTROL + "a" + Keys.DELETE)
+    time.sleep(0.5)
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[3]/div/input').click()
+    time.sleep(0.5)
+    navegador.find_element_by_xpath('//*[@id="__next"]/div/div/div[2]/div[2]/div/div/form/div[3]/div/input').send_keys(id_school)
+    time.sleep(1)
+
+except:
+    pass
