@@ -22,4 +22,4 @@ This project solves any math activity on the [Mangahigh](https://www.mangahigh.c
 
 <img src="https://user-images.githubusercontent.com/72043658/176787395-8eacd81e-e59d-4784-bd3e-f9f84c1ce293.png" width=100> <img src="https://user-images.githubusercontent.com/72043658/176787843-b16900cd-3180-46fc-8dfc-30ba6fa1c152.png" width=100> <img width="100" alt="Selenium_Logo" src="https://user-images.githubusercontent.com/72043658/176787977-63826ff8-cc44-452f-b84c-85d554dd5476.png">
 
-- Developer by: Danimar Costa
+- Developed by: Danimar Costa
